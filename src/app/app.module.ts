@@ -8,6 +8,7 @@ import { GlobalInterceptor } from './core/interceptors/global.interceptor';
 import { HomeComponent } from './core/pages/home/home.component';
 import { SharedModule } from './core/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      timeOut: 3000,
+      progressBar: true,
+    }),
   ],
   providers: [
     {

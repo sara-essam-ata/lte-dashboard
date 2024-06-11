@@ -17,30 +17,36 @@ export class HomeComponent implements OnInit {
   constructor(private SharedService: SharedService) {}
   ngOnInit() {
     this.getAllPosts();
-    this.getAllComments();
-    this.getAllAlbums();
-    this.getAllUsers();
+    // this.getAllComments();
+    // this.getAllAlbums();
+    // this.getAllUsers();
     // this.createChart()
   }
   getAllPosts() {
     this.SharedService.onGetAllPosts().subscribe({
       next: (res) => {
         this.posts = res.length;
-      },
+      },complete:()=>{
+        this.getAllComments()
+      }
     });
   }
   getAllComments() {
     this.SharedService.onGetAllComments().subscribe({
       next: (res) => {
         this.comments = res.length;
-      },
+      },complete:()=>{
+        this.getAllAlbums()
+      }
     });
   }
   getAllAlbums() {
     this.SharedService.onGetAllAlbums().subscribe({
       next: (res) => {
         this.albums = res.length;
-      },
+      },complete:()=>{
+        this.getAllUsers()
+      }
     });
   }
   getAllUsers() {
@@ -66,7 +72,7 @@ export class HomeComponent implements OnInit {
             backgroundColor: [
               'rgb(40,167,69)',
               'rgb(253,126,20)',
-              'rgb(100,65,23)',
+              'rgb(108,117,125)',
               'rgb(0,123,255)',
             ],
             hoverOffset: 4,
