@@ -1,0 +1,24 @@
+<section id="sidebar">
+  <div class="user ps-2 py-3 pointer">
+    <img
+      src="../../../../../assets/images/user-image-sidebar.jpg"
+      alt=""
+    /><span class="ps-2">Alexander Pierce</span>
+  </div>
+  <div class="row">
+    <ul>
+      <li
+        *ngFor="let item of menu"
+        [routerLink]="item.link"
+        mat-icon-button
+        [routerLinkActive]="['bg-active']"
+        class="pointer mt-3"
+      >
+        <a
+          ><i [class]="item.icon"></i>
+          <span [ngClass]="isOpen ? '' : ''">{{ item.title }}</span></a
+        >
+      </li>
+    </ul>
+  </div>
+</section>

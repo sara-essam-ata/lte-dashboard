@@ -1,0 +1,38 @@
+@import "../variables";
+
+#navbar {
+  background-color: white;
+  border-bottom: 1px solid #dee2e6;
+  .size {
+    transition: all 0.4s ease-in;
+  }
+  .logo {
+    background: $secondary-color;
+    transition: all 0.2s ease-in;
+
+    color: #ffffffcc;
+    border-bottom: 1px solid #4b545c;
+    z-index: 777;
+    img {
+      width: 22%;
+      // transition: all .2s ease-in;
+    }
+    &:hover span {
+      color: #fff;
+      transition: all 0.2s ease-in;
+    }
+  }
+  a,
+  i {
+    text-decoration: none;
+    color: #00000080;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+  i:hover {
+    color: $secondary-color;
+  }
+  a:hover {
+    color: $secondary-color;
+  }
+}

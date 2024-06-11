@@ -1,0 +1,83 @@
+<section id="home">
+  <div class="container-fluid">
+    <div class="row mt-4">
+      <div class="d-flex justify-content-between">
+        <h3>Dashboard</h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a routerLink="/dashboard/home">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Dashboard
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-md-3">
+        <div class="bg-info rounded">
+          <div class="info">
+            <div>
+              <h4>{{ posts }}</h4>
+              <p>Posts</p>
+            </div>
+            <i class="fa-regular fa-clipboard"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="bg-success rounded">
+          <div class="info">
+            <div>
+              <h4>{{ comments }}</h4>
+              <p>Comments</p>
+            </div>
+            <i class="fa-regular fa-comments"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="bg-warning rounded">
+          <div class="info">
+            <div>
+              <h4>{{ albums }}</h4>
+              <p>Albums</p>
+            </div>
+            <i class="fa-solid fa-images"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="bg-danger rounded">
+          <div class="info">
+            <div>
+              <h4>{{ users }}</h4>
+              <p>Users</p>
+            </div>
+            <i class="fa-solid fa-users"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="bg-white border rounded m-3 p-3">
+        <h3>Sales</h3>
+        <div class="w-50 mx-auto">
+          <canvas id="canvas">{{ chart }}</canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="bg-white border rounded m-3 p-3">
+        <h3>Sales</h3>
+        <div class="w-50 mx-auto">
+          <mat-card class="demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

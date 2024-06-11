@@ -1,0 +1,32 @@
+<div class="container-fluid px-0 w-100" id="navbar">
+  <div class="row align-items-center">
+    <div class="px-0 size" [ngClass]="isOpen ? 'col-md-2' : 'col-md-1'">
+      <div class="logo py-3 pointer">
+        <img
+          src="../../../../../assets/images/AdminLTELogo.webp"
+          alt=""
+          class="ps-4"
+          [ngClass]="isOpen ? '' : 'w-50'"
+        /><span [ngClass]="isOpen ? '' : 'd-none'" class="ps-2 fs-6"
+          >AdminLTE</span
+        >
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="row justify-content-between">
+        <div class="col-md-3 d-flex justify-content-around align-items-center">
+          <i class="fa-solid fa-bars pointer" (click)="click()"></i>
+          <a href="">Home</a>
+          <a href="">Contact</a>
+        </div>
+        <div class="col-md-3 d-flex justify-content-around align-items-center">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-regular fa-comments"></i>
+          <i class="fa-regular fa-bell"></i>
+          <i class="fa-solid fa-maximize"></i>
+          <i class="fas fa-th-large"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
