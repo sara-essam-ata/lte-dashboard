@@ -1,0 +1,45 @@
+<div class="container" id="users-list">
+  <div class="row">
+    <div class="d-flex justify-content-between my-3">
+      <h3>Users</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/dashboard/home">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Users</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row ms-2 py-3 border rounded bg-white">
+      <div class="col-md-4 my-2 text-nowrap" *ngFor="let user of usersList">
+        <div class="border rounded item ">
+            <div class="d-flex justify-content-between px-3 py-2 align-items-center">
+                <div class="info">
+                <p>Digital Strategist</p>
+                <h5>{{user?.name}}</h5>
+                <p><i class="fa-regular fa-envelope"></i> {{user?.email}}</p>
+                <p><i class="fa-solid fa-phone"></i> {{user?.phone}}</p>
+                <p><i class="fa-solid fa-location-dot"></i> {{user?.address?.street}}/{{user?.address?.city}}</p>
+                <p>company: {{user?.company?.name}}</p>
+            </div>
+            <div class="image text-end">
+                <img src="../../../../../../assets/images/user-image-sidebar.jpg" class="rounded-circle w-75" alt="">
+            </div>
+            </div>
+            <div class="text-end action">
+            <button class="buttons primary" [routerLink]="['/dashboard/users/profile', user?.id]">View Details</button>
+        </div>
+            
+        </div>
+        
+      </div>
+      <!-- <div class="col-md-4">
+        <div class="border rounded item">sara</div>
+      </div>
+      <div class="col-md-4">
+        <div class="border rounded">sara</div>
+      </div> -->
+    </div>
+  </div>
+</div>
