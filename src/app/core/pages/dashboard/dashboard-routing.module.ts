@@ -20,6 +20,14 @@ const routes: Routes = [
             (m) => m.ProjectsModule
           ),
       },
+      {
+        path: 'users',
+        title: 'AdminLTE | Users',
+        loadChildren: () =>
+          import('../users/users.module').then(
+            (m) => m.UsersModule
+          ),
+      },
     ],}
 ];
 

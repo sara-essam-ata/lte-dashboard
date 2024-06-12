@@ -2,8 +2,7 @@ $main-color: #007bff;
 $secondary-color: #343A40;
 $third-color: #28a745;
 
-.bg-main,
-.text-main {
+.bg-main{
   background-color: $main-color;
 }
 .bg-secondaryColor,
@@ -13,4 +12,7 @@ $third-color: #28a745;
 .bg-third,
 .text-third {
   background-color: $third-color;
+}
+.text-main{
+  color: $main-color;
 }

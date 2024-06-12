@@ -1,0 +1,57 @@
+#users-list {
+  .item {
+    background: rgb(243, 244, 245, 0.7);
+    .action {
+      background: rgb(229, 230, 231);
+      width: 100% !important;
+      padding: 8px;
+    }
+  }
+}
+#profile {
+  .profile-card {
+    border-top: 3px solid $main-color;
+    border-radius: 10px !important;
+    background: #fff;
+    .item {
+      border-bottom: 1px solid #e3e0e0cc;
+      padding: 10px 10px 0px 10px;
+      display: flex;
+      justify-content: space-between;
+      .num {
+        color: $main-color;
+      }
+    }
+    .item1 {
+      border-bottom: 1px solid #e3e0e0cc;
+      padding: 10px 20px 0px 20px;
+      text-align: left !important;
+      h6 {
+        font-weight: 600;
+      }
+      span {
+        color: $main-color;
+      }
+    }
+    .comment-img {
+      width: 60px;
+      margin-right: 10px;
+    }
+    .comment {
+      color: #666;
+      margin: 10px;
+      font-size: 14px;
+    }
+    .react {
+      transition: all 0.2 ease-in;
+      .comment:hover {
+        color: #ddd9d9cc;
+      }
+    }
+  }
+  .activity {
+    border-bottom: 1px solid #e3e0e0cc !important;
+    padding-bottom: 20px;
+    margin: 20px 0px;
+  }
+}
