@@ -1,0 +1,19 @@
+#projects-list {
+  .status {
+    padding: 8px 15px;
+    border-radius: 16px;
+    // color: #fff;
+    &.true {
+      background-color: #007bff !important;
+    }
+    &.false {
+      background-color: #d2d6de;
+    }
+  }
+  thead {
+    background: rgb(169, 169, 169);
+    th {
+      padding: 20px 5px;
+    }
+  }
+}

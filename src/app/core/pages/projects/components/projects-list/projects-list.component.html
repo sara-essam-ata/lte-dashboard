@@ -1,1 +1,85 @@
-<p>projects-list works!</p>
+<section id="projects-list">
+  <div class="m-4 d-flex justify-content-between">
+    <!-- header -->
+    <h3>Projects</h3>
+    <!-- add new project -->
+    <button routerLink="/dashboard/projects/add" class="primary buttons px-3">
+      <span class="fa-solid fa-plus mx-2"></span>
+      <span>Add New Project</span>
+    </button>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/dashboard/home">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Projects</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- projects list -->
+  <div class="container">
+    <table class="table">
+      <thead>
+        <th>Id</th>
+        <th class="w-25">Title</th>
+        <th class="text-center">Completed</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of projectsList">
+          <td>{{ item?.id }}</td>
+          <td class="w-25">{{ item?.title }}</td>
+          <td class="text-center m-auto">
+            <span *ngIf="item?.completed == true" class="status true">
+              {{ item?.completed }}
+            </span>
+            <span *ngIf="item?.completed == false" class="status false">
+              {{ item?.completed }}
+            </span>
+          </td>
+          <td>
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              class="border-0 bg-white"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button
+                mat-menu-item
+                [routerLink]="['/dashboard/projects/view', item.id]"
+              >
+                <mat-icon>visibility</mat-icon>
+                <span>View</span>
+              </button>
+              <button
+                mat-menu-item
+                [routerLink]="['/dashboard/projects/edit', item.id]"
+              >
+                <mat-icon>edit-square</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="openDeleteDialog(item?.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- pagination -->
+    <div class="w-50 m-auto border">
+      <mat-paginator
+        [length]="allProjects?.length"
+        [pageSizeOptions]="[20]"
+        [pageSize]="projectsList?.length"
+        (page)="handlePageEvent($event)"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</section>

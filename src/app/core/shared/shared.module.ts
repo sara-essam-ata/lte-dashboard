@@ -7,9 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [NavbarComponent, SidebarComponent],
+  declarations: [NavbarComponent, SidebarComponent, DeleteDialogComponent],
   imports: [
     CommonModule,
     RouterLink,
@@ -18,6 +24,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
+    MatPaginatorModule,
+    MatMenuModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatDialogModule,
   ],
   exports: [
     NavbarComponent,
@@ -26,6 +37,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
+    MatPaginatorModule,
+    MatMenuModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatDialogModule,
   ],
 })
 export class SharedModule {}

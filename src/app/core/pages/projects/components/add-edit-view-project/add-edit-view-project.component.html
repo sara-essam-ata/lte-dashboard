@@ -1,1 +1,78 @@
-<p>add-edit-view-project works!</p>
+<div class="container">
+  <div class="row">
+    <div class="c0l-md-10 d-flex justify-content-center">
+      <div class="bg-white mt-5 p-5 border rounded w-75">
+        <h3 *ngIf="AddMode">Add Project</h3>
+        <h3 *ngIf="EditMode">Edit Project</h3>
+        <h3 *ngIf="ViewMode">Project Details</h3>
+
+        <form
+          [formGroup]="projectForm"
+          (ngSubmit)="onSubmit(projectForm)"
+          class="my-4"
+        >
+          <div class="input-group input-group-lg mb-3 d-flex flex-nowrap">
+            <span
+              class="input-group-text bg-main text-white"
+              id="inputGroup-sizing-lg"
+              >Project Title:</span
+            >
+            <input
+              formControlName="title"
+              type="text"
+              class="form-control"
+              aria-label="title"
+              aria-describedby="title"
+            />
+            <span
+              class="text-danger px-3"
+              *ngIf="
+                projectForm.get('title')?.errors &&
+                projectForm.get('title')?.touched
+              "
+            >
+              <span *ngIf="projectForm.get('title')?.getError('required')"
+                >Project Title is required</span
+              >
+            </span>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text bg-main text-white">Description</span>
+            <textarea
+              formControlName="body"
+              class="form-control"
+              rows="3"
+              aria-label="With textarea"
+            ></textarea>
+            <span
+              class="text-danger px-3"
+              *ngIf="
+                projectForm.get('body')?.errors &&
+                projectForm.get('body')?.touched
+              "
+            >
+              <span *ngIf="projectForm.get('body')?.getError('required')"
+                >Project Description is required</span
+              >
+            </span>
+          </div>
+          <div class="d-flex justify-content-end mt-4">
+            <button
+              class="btn bg-secondary me-3 text-white"
+              type="button"
+              routerLink="/dashboard/projects"
+            >
+              Cancle
+            </button>
+            <button *ngIf="AddMode" class="btn bg-success text-white">
+              Add New Project
+            </button>
+            <button *ngIf="EditMode" class="btn bg-success text-white">
+              Edit Project
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
